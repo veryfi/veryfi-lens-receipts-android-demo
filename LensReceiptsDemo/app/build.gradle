@@ -12,21 +12,11 @@ android {
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'VERYFI_CLIENT_ID', "\"${System.getenv("VERYFI_CLIENT_ID")}\""
         buildConfigField 'String', 'VERYFI_USERNAME', "\"${System.getenv("VERYFI_USERNAME")}\""
         buildConfigField 'String', 'VERYFI_API_KEY', "\"${System.getenv("VERYFI_API_KEY")}\""
         buildConfigField 'String', 'VERYFI_URL', "\"${System.getenv("VERYFI_URL")}\""
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments += [
-                        "room.schemaLocation":"$projectDir/schemas".toString(),
-                        "room.incremental":"true",
-                        "room.expandProjection":"true"]
-            }
-        }
     }
 
     androidResources {
