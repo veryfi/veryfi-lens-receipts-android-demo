@@ -26,12 +26,7 @@ class Application: Application() {
 
         //optional settings
         val veryfiLensSettings = VeryfiLensSettings()
-        veryfiLensSettings.autoCaptureIsOn = true
-        veryfiLensSettings.autoRotateIsOn = true
-        veryfiLensSettings.autoSubmitDocumentOnCapture = true
         veryfiLensSettings.documentTypes = arrayListOf("receipt")
-        veryfiLensSettings.galleryIsOn = false
-        veryfiLensSettings.moreMenuIsOn = false
         veryfiLensSettings.showDocumentTypes = true
 
         //configure lens
