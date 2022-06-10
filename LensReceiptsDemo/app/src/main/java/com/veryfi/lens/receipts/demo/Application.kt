@@ -4,6 +4,7 @@ import android.app.Application
 import com.veryfi.lens.VeryfiLens
 import com.veryfi.lens.VeryfiLensCredentials
 import com.veryfi.lens.VeryfiLensSettings
+import com.veryfi.lens.helpers.DocumentType
 
 class Application: Application() {
 
@@ -26,7 +27,7 @@ class Application: Application() {
 
         //optional settings
         val veryfiLensSettings = VeryfiLensSettings()
-        veryfiLensSettings.documentTypes = arrayListOf("receipt")
+        veryfiLensSettings.documentTypes = arrayListOf(DocumentType.RECEIPT)
         veryfiLensSettings.showDocumentTypes = true
 
         //configure lens
