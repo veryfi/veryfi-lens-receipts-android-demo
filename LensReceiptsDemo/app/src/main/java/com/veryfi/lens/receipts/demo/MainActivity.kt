@@ -375,7 +375,7 @@ class MainActivity : AppCompatActivity() {
         materialAlertDialogBuilder.setView(customAlertDialogView)
             .setTitle(resources.getString(R.string.settings_set_color_title))
             .setPositiveButton(resources.getString(R.string.btn_ok)) { dialog, _ ->
-                val colorSelected = "#".plus(formatColor(colorPickerView.color).toString())
+                val colorSelected = "#".plus(formatColor(colorPickerView.color))
 
                 when (typeColor) {
                     0 -> {
@@ -539,12 +539,11 @@ class MainActivity : AppCompatActivity() {
             this.application,
             veryfiLensCredentials,
             veryfiLensSettings
-        ) {
-        }
+        )
         VeryfiLens.showCamera()
     }
 
-    private fun formatColor(color: Int): String? {
+    private fun formatColor(color: Int): String {
         return String.format("%08x", color)
     }
 }
