@@ -55,4 +55,13 @@
     <string name="settings_hint_external_id">External ID</string>
     <string name="settings_set_email_cc_domain">Set email CC domain</string>
     <string name="settings_set_external_id">Set external ID</string>
+    <string name="logs_start_uploading" translatable="false">Start uploading</string>
+    <string name="logs_thumbnail" translatable="false">Thumbnail</string>
+    <string name="logs_original_image" translatable="false">Original image</string>
+    <string name="logs_extraction" translatable="false">Extraction</string>
+    <string name="logs_result" translatable="false">Result</string>
+    <string name="logs_remove_cache_data" translatable="false">Remove cache data</string>
+    <string name="logs_exception" translatable="false">Exception</string>
+    <string name="logs_error" translatable="false">Error</string>
+    <string name="logs_failed" translatable="false">Failed</string>
 </resources>

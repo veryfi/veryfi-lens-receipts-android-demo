@@ -1,6 +1,7 @@
 package com.veryfi.lens.receipts.demo
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
@@ -14,12 +15,11 @@ import com.google.android.material.textfield.TextInputLayout
 import com.rarepebble.colorpicker.ColorPickerView
 import com.veryfi.lens.VeryfiLens
 import com.veryfi.lens.VeryfiLensCredentials
-import com.veryfi.lens.VeryfiLensDelegate
 import com.veryfi.lens.VeryfiLensSettings
 import com.veryfi.lens.helpers.DocumentType
 import com.veryfi.lens.receipts.demo.databinding.ActivityMainBinding
 import com.veryfi.lens.receipts.demo.helpers.ThemeHelper
-import org.json.JSONObject
+import com.veryfi.lens.receipts.demo.logs.LogsActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -86,7 +86,6 @@ class MainActivity : AppCompatActivity() {
         materialAlertDialogBuilder = MaterialAlertDialogBuilder(this)
         applicationContext?.let { ThemeHelper.setBackgroundColorToStatusBar(this, it) }
         initVeryfiSettings()
-        setUpVeryfiLens()
         setUpClickEvents()
     }
 
@@ -348,26 +347,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setUpVeryfiLens() {
-        VeryfiLens.setDelegate(object : VeryfiLensDelegate {
-            override fun veryfiLensClose(json: JSONObject) {
-
-            }
-
-            override fun veryfiLensError(json: JSONObject) {
-
-            }
-
-            override fun veryfiLensSuccess(json: JSONObject) {
-
-            }
-
-            override fun veryfiLensUpdate(json: JSONObject) {
-
-            }
-        })
-    }
-
     private fun showDialog(color: String, typeColor: Int) {
         colorPickerView = customAlertDialogView.findViewById(R.id.colorPicker)
         colorPickerView.color = Color.parseColor(color)
@@ -541,7 +520,7 @@ class MainActivity : AppCompatActivity() {
             veryfiLensSettings
         ) {
         }
-        VeryfiLens.showCamera()
+        startActivity(Intent(this, LogsActivity::class.java))
     }
 
     private fun formatColor(color: Int): String? {

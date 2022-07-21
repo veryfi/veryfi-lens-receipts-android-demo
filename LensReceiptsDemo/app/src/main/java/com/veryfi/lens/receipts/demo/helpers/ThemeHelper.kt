@@ -43,4 +43,17 @@ object ThemeHelper {
             }
         }
     }
+
+    fun getPrimaryColor(activity: Activity): Int {
+        var color = R.color.md_theme_light_background
+        when (activity.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                color = R.color.md_theme_dark_background
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+                color = R.color.md_theme_light_background
+            }
+        }
+        return color
+    }
 }
