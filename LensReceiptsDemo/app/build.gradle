@@ -1,4 +1,4 @@
-plugins{
+plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
@@ -24,7 +24,8 @@ android {
     }
 
     buildFeatures {
-        dataBinding true
+        viewBinding true
+        //compose true
     }
 
     compileOptions {
@@ -36,6 +37,10 @@ android {
         jvmTarget = "11"
     }
 
+//    composeOptions {
+//        kotlinCompilerExtensionVersion '1.1.1'
+//    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -43,10 +48,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.veryfi.lens.receipts.demo'
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.veryfi.lens:veryfi-lens-receipts-sdk:1.5.7.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.github.martin-stone:hsv-alpha-color-picker-android:3.0.1'
+    implementation 'com.github.lriccardo:TimelineView:1.1.2'
 }
