@@ -14,9 +14,9 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.rarepebble.colorpicker.ColorPickerView
 import com.veryfi.lens.VeryfiLens
-import com.veryfi.lens.VeryfiLensCredentials
-import com.veryfi.lens.VeryfiLensSettings
 import com.veryfi.lens.helpers.DocumentType
+import com.veryfi.lens.helpers.VeryfiLensCredentials
+import com.veryfi.lens.helpers.VeryfiLensSettings
 import com.veryfi.lens.receipts.demo.databinding.ActivityMainBinding
 import com.veryfi.lens.receipts.demo.helpers.ThemeHelper
 import com.veryfi.lens.receipts.demo.logs.LogsActivity
