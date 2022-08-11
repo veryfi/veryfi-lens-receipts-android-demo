@@ -347,7 +347,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showDialog(color: String, typeColor: Int) {
+    private fun showDialog(color: String?, typeColor: Int) {
         colorPickerView = customAlertDialogView.findViewById(R.id.colorPicker)
         colorPickerView.color = Color.parseColor(color)
 
