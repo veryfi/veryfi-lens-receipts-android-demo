@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity() {
     private var confidenceDetailsIsOn = veryfiLensSettings.confidenceDetailsIsOn
     private var parseAddressIsOn = veryfiLensSettings.parseAddressIsOn
     private var externalId = veryfiLensSettings.externalId ?: ""
+    private var gpuIsOn = veryfiLensSettings.gpuIsOn
 
     override fun onStart() {
         super.onStart()
@@ -129,6 +130,7 @@ class MainActivity : AppCompatActivity() {
         viewBinding.switchIsProduction.isChecked = isProduction
         viewBinding.switchConfidenceDetails.isChecked = confidenceDetailsIsOn
         viewBinding.switchParseAddress.isChecked = parseAddressIsOn
+        viewBinding.switchGpu.isChecked = gpuIsOn
         initColors()
         initFloatValues()
         initStringValues()
@@ -278,6 +280,10 @@ class MainActivity : AppCompatActivity() {
 
         viewBinding.switchParseAddress.setOnCheckedChangeListener { _, isChecked ->
             parseAddressIsOn = isChecked
+        }
+
+        viewBinding.switchGpu.setOnCheckedChangeListener { _, isChecked ->
+            gpuIsOn = isChecked
         }
 
         viewBinding.imgPrimaryColor.setOnClickListener {
@@ -504,6 +510,7 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.isProduction = isProduction
         veryfiLensSettings.confidenceDetailsIsOn = confidenceDetailsIsOn
         veryfiLensSettings.parseAddressIsOn = parseAddressIsOn
+        veryfiLensSettings.gpuIsOn = gpuIsOn
         veryfiLensSettings.externalId = externalId
         veryfiLensSettings.documentTypes = arrayListOf(DocumentType.RECEIPT)
         veryfiLensSettings.showDocumentTypes = true

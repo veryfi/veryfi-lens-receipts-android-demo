@@ -24,6 +24,7 @@
     <string name="settings_auto_rotate">Auto rotate</string>
     <string name="settings_auto_doc_detection">Auto doc detection and crop</string>
     <string name="settings_auto_crop_gallery">Auto crop gallery</string>
+    <string name="settings_gpu">GPU</string>
     <string name="settings_allow_undetected_docs">Allow submit undetected docs</string>
     <string name="settings_auto_submit_document_capture">Auto submit document on capture</string>
     <string name="settings_backup_docs_gallery">Backup docs to gallery</string>
