@@ -20,7 +20,7 @@ You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.c
 4. [Get in contact with our team](#contact)
 
 ## Veryfi Lens Receipts & Invoices Android Example <a name="example"></a>
-![receipt](https://user-images.githubusercontent.com/46335146/163218032-fa4b3d1e-ac47-458b-a7f3-5682b4892e28.gif)
+![LensReceiptsDemo](https://user-images.githubusercontent.com/30125790/189659559-9630b122-24dc-4648-9d38-dd1a00ac8f33.gif)
 
 ## Other Lens Android Examples <a name="examples"></a>
 This is an example of how to use Veryfi Lens Receipts & Invoices in your app, you can find the developer documentation [here](AndroidLensReceipts.pdf).
