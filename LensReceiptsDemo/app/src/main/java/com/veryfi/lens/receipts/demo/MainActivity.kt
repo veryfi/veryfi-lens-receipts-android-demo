@@ -48,8 +48,12 @@ class MainActivity : AppCompatActivity() {
     private var blurDetectionIsOn = veryfiLensSettings.blurDetectionIsOn
     private var autoSkewCorrectionIsOn = veryfiLensSettings.autoSkewCorrectionIsOn
     private var autoCropGalleryIsOn = veryfiLensSettings.autoCropGalleryIsOn
-    private var primaryColor = veryfiLensSettings.primaryColor ?: "#ff4285f4"
-    private var accentColor = veryfiLensSettings.accentColor ?: "#ff4285f4"
+    private var primaryColor = veryfiLensSettings.primaryColor ?: "#FF005AC1"
+    private var primaryDarkColor = veryfiLensSettings.primaryDarkColor ?: "#FFADC6FF"
+    private var secondaryColor = veryfiLensSettings.secondaryColor ?: "#FFDBE2F9"
+    private var secondaryDarkColor = veryfiLensSettings.secondaryDarkColor ?: "#FF3F4759"
+    private var accentColor = veryfiLensSettings.accentColor ?: "#FF005AC1"
+    private var accentDarkColor = veryfiLensSettings.accentDarkColor ?: "#FFDBE2F9"
     private var docDetectFillUIColor = veryfiLensSettings.docDetectFillUIColor ?: "#9653BF8A"
     private var submitButtonBackgroundColor = veryfiLensSettings.submitButtonBackgroundColor
     private var submitButtonBorderColor = veryfiLensSettings.submitButtonBorderColor
@@ -138,7 +142,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initColors() {
         viewBinding.imgPrimaryColor.setBackgroundColor(Color.parseColor(primaryColor))
+        viewBinding.imgPrimaryDarkColor.setBackgroundColor(Color.parseColor(primaryDarkColor))
+        viewBinding.imgSecondaryColor.setBackgroundColor(Color.parseColor(secondaryColor))
+        viewBinding.imgSecondaryDarkColor.setBackgroundColor(Color.parseColor(secondaryDarkColor))
         viewBinding.imgAccentColor.setBackgroundColor(Color.parseColor(accentColor))
+        viewBinding.imgAccentDarkColor.setBackgroundColor(Color.parseColor(accentDarkColor))
         viewBinding.imgDetectFillColor.setBackgroundColor(Color.parseColor(docDetectFillUIColor))
         viewBinding.imgSubmitBackgroundColor.setBackgroundColor(
             Color.parseColor(
@@ -161,7 +169,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initStringValues() {
         viewBinding.txtCcDomain.text = emailCCDomain
-        viewBinding.txtExternalId.text = externalId
+        viewBinding.txtExternalId.text = (externalId.ifEmpty { "N/A" }).toString()
     }
 
     @SuppressLint("InflateParams")
@@ -292,40 +300,64 @@ class MainActivity : AppCompatActivity() {
             showDialog(primaryColor, 0)
         }
 
+        viewBinding.imgPrimaryDarkColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(primaryDarkColor, 1)
+        }
+
+        viewBinding.imgSecondaryColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(secondaryColor, 2)
+        }
+
+        viewBinding.imgSecondaryDarkColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(secondaryDarkColor, 3)
+        }
+
         viewBinding.imgAccentColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(accentColor, 1)
+            showDialog(accentColor, 4)
+        }
+
+        viewBinding.imgAccentDarkColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(accentDarkColor, 5)
         }
 
         viewBinding.imgDetectFillColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(docDetectFillUIColor, 2)
+            showDialog(docDetectFillUIColor, 6)
         }
 
         viewBinding.imgSubmitBackgroundColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(submitButtonBackgroundColor, 3)
+            showDialog(submitButtonBackgroundColor, 7)
         }
 
         viewBinding.imgSubmitBorderColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(submitButtonBorderColor, 4)
+            showDialog(submitButtonBorderColor, 8)
         }
 
         viewBinding.imgSubmitFontColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(submitButtonFontColor, 5)
+            showDialog(submitButtonFontColor, 9)
         }
 
         viewBinding.imgDocDetectStrokeColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(docDetectStrokeUIColor, 6)
+            showDialog(docDetectStrokeUIColor, 10)
         }
 
         viewBinding.txtCornerRadius.setOnClickListener {
@@ -367,21 +399,33 @@ class MainActivity : AppCompatActivity() {
                         primaryColor = colorSelected
                     }
                     1 -> {
-                        accentColor = colorSelected
+                        primaryDarkColor = colorSelected
                     }
                     2 -> {
-                        docDetectFillUIColor = colorSelected
+                        secondaryColor = colorSelected
                     }
                     3 -> {
-                        submitButtonBackgroundColor = colorSelected
+                        secondaryDarkColor = colorSelected
                     }
                     4 -> {
-                        submitButtonBorderColor = colorSelected
+                        accentColor = colorSelected
                     }
                     5 -> {
-                        submitButtonFontColor = colorSelected
+                        accentDarkColor = colorSelected
                     }
                     6 -> {
+                        docDetectFillUIColor = colorSelected
+                    }
+                    7 -> {
+                        submitButtonBackgroundColor = colorSelected
+                    }
+                    8 -> {
+                        submitButtonBorderColor = colorSelected
+                    }
+                    9 -> {
+                        submitButtonFontColor = colorSelected
+                    }
+                    10 -> {
                         docDetectStrokeUIColor = colorSelected
                     }
                 }
@@ -402,7 +446,7 @@ class MainActivity : AppCompatActivity() {
             0 -> {
                 titleDialog = resources.getString(R.string.settings_set_submit_button_corner_radius)
                 barSliderView.valueFrom = 0.0f
-                barSliderView.valueTo = 20.0f
+                barSliderView.valueTo = 30.0f
                 barSliderView.stepSize = 1.0f
             }
             1 -> {
@@ -487,7 +531,11 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.autoSkewCorrectionIsOn = autoSkewCorrectionIsOn
         veryfiLensSettings.autoCropGalleryIsOn = autoCropGalleryIsOn
         veryfiLensSettings.primaryColor = primaryColor
+        veryfiLensSettings.primaryDarkColor = primaryDarkColor
+        veryfiLensSettings.secondaryColor = secondaryColor
+        veryfiLensSettings.secondaryDarkColor = secondaryDarkColor
         veryfiLensSettings.accentColor = accentColor
+        veryfiLensSettings.accentDarkColor = accentDarkColor
         veryfiLensSettings.docDetectFillUIColor = docDetectFillUIColor
         veryfiLensSettings.submitButtonBackgroundColor = submitButtonBackgroundColor
         veryfiLensSettings.submitButtonBorderColor = submitButtonBorderColor
