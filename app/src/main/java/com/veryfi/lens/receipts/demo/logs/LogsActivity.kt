@@ -77,8 +77,7 @@ class LogsActivity : AppCompatActivity() {
         val gson = GsonBuilder().setPrettyPrinting().create()
         val prettyJsonString = gson.toJson(jsonElement)
         log.message = prettyJsonString
-        val status = json.getString(STATUS)
-
+        val status = if (json.has(STATUS)) json.getString(STATUS) else ""
         when (status) {
             START -> log.title = resources.getString(R.string.logs_start_uploading)
             IN_PROGRESS -> {
@@ -96,6 +95,7 @@ class LogsActivity : AppCompatActivity() {
             EXCEPTION -> log.title = resources.getString(R.string.logs_exception)
             ERROR -> log.title = resources.getString(R.string.logs_error)
             FAILED -> log.title = resources.getString(R.string.logs_failed)
+            else -> log.title = "Other"
         }
 
         if (!status.equals(CLOSE)) {
