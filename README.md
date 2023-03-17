@@ -62,8 +62,8 @@ You can find some example projects, which are the different versions of Lens tha
 - [Lens for Credit Cards](https://github.com/veryfi/veryfi-lens-credit-cards-android-demo)
 - [Lens for Business Cards](https://github.com/veryfi/veryfi-lens-business-cards-android-demo)
 - [Lens for Checks](https://github.com/veryfi/veryfi-lens-checks-android-demo)
-- [Lens for W2](https://github.com/veryfi/veryfi-lens-w2-android-demo)
-- [Lens for W9](https://github.com/veryfi/veryfi-lens-w9-android-demo)
+- [Lens for W-2](https://github.com/veryfi/veryfi-lens-w2-android-demo)
+- [Lens for W-9](https://github.com/veryfi/veryfi-lens-w9-android-demo)
 
 ## Other platforms <a name="other_platforms"></a>
 You can find these examples for Lens iOS 
@@ -72,6 +72,8 @@ You can find these examples for Lens iOS
 - [Credit Cards](https://github.com/veryfi/veryfi-lens-credit-cards-ios-demo)
 - [Business Cards](https://github.com/veryfi/veryfi-lens-business-cards-ios-demo)
 - [Checks](https://github.com/veryfi/veryfi-lens-checks-ios-demo)
+- [W-2](https://github.com/veryfi/veryfi-lens-w2-ios-demo)
+- [W-9](https://github.com/veryfi/veryfi-lens-w9-ios-demo)
 
 We also support the following wrappers for hybrid frameworks:
 - [Cordova](https://hub.veryfi.com/lens/docs/cordova/)
