@@ -12,6 +12,8 @@
     <string name="settings_auto_light_detection">Auto light detection</string>
     <string name="settings_blur_detection">Blur detection</string>
     <string name="settings_stitch">Stitch</string>
+    <string name="settings_soft_binarization">Soft binarization</string>
+    <string name="settings_dewarping">Dewarping</string>
     <string name="settings_auto_skew_correction">Auto skew correction</string>
     <string name="content_description">content description</string>
     <string name="settings_primary_color">Primary color</string>
