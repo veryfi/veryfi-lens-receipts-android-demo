@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
     private var originalImageMaxSizeInMB = veryfiLensSettings.originalImageMaxSizeInMB
     private var autoRotateIsOn = veryfiLensSettings.autoRotateIsOn
     private var autoDocDetectionAndCropIsOn = veryfiLensSettings.autoDocDetectionAndCropIsOn
+    private var softBinarizationIsOn = veryfiLensSettings.softBinarizationIsOn
+    private var dewarpingIsOn = veryfiLensSettings.dewarpingIsOn
     private var blurDetectionIsOn = veryfiLensSettings.blurDetectionIsOn
     private var autoSkewCorrectionIsOn = veryfiLensSettings.autoSkewCorrectionIsOn
     private var autoCropGalleryIsOn = veryfiLensSettings.autoCropGalleryIsOn
@@ -117,6 +119,8 @@ class MainActivity : AppCompatActivity() {
         viewBinding.switchAutoRotate.isChecked = autoRotateIsOn
         viewBinding.switchAutoDocDetection.isChecked = autoDocDetectionAndCropIsOn
         viewBinding.switchBlur.isChecked = blurDetectionIsOn
+        viewBinding.switchSoftBinarization.isChecked = softBinarizationIsOn
+        viewBinding.switchDewarping.isChecked = dewarpingIsOn
         viewBinding.switchSkew.isChecked = autoSkewCorrectionIsOn
         viewBinding.switchAutoCropGallery.isChecked = autoCropGalleryIsOn
         viewBinding.switchManualCrop.isChecked = manualCropIsOn
@@ -220,6 +224,14 @@ class MainActivity : AppCompatActivity() {
 
         viewBinding.switchBlur.setOnCheckedChangeListener { _, isChecked ->
             blurDetectionIsOn = isChecked
+        }
+
+        viewBinding.switchSoftBinarization.setOnCheckedChangeListener { _, isChecked ->
+            softBinarizationIsOn = isChecked
+        }
+
+        viewBinding.switchDewarping.setOnCheckedChangeListener { _, isChecked ->
+            dewarpingIsOn = isChecked
         }
 
         viewBinding.switchSkew.setOnCheckedChangeListener { _, isChecked ->
@@ -528,6 +540,8 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.autoRotateIsOn = autoRotateIsOn
         veryfiLensSettings.autoDocDetectionAndCropIsOn = autoDocDetectionAndCropIsOn
         veryfiLensSettings.blurDetectionIsOn = blurDetectionIsOn
+        veryfiLensSettings.softBinarizationIsOn = softBinarizationIsOn
+        veryfiLensSettings.dewarpingIsOn = dewarpingIsOn
         veryfiLensSettings.autoSkewCorrectionIsOn = autoSkewCorrectionIsOn
         veryfiLensSettings.autoCropGalleryIsOn = autoCropGalleryIsOn
         veryfiLensSettings.primaryColor = primaryColor
