@@ -18,6 +18,9 @@ Lens is built in native code and optimized for fast performance, clean user expe
 
 You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.com/lens/
 
+You can watch our video:
+[![Veryfi Lens](https://img.youtube.com/vi/TUV5SXpKN48/maxresdefault.jpg)](http://www.youtube.com/watch?v=TUV5SXpKN48 "Veryfi Lens Features")
+
 ## Table of content
 1. [Veryfi Lens Android Examples](#examples)
 2. [How to add Veryfi Lens to your project](#maven)
