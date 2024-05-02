@@ -72,6 +72,7 @@ class LogsActivity : AppCompatActivity() {
         log.message = json
         val status = if (json.has(STATUS)) json.getString(STATUS) else ""
         when (status) {
+            CLOSE -> log.title = resources.getString(R.string.logs_result)
             START -> log.title = resources.getString(R.string.logs_start_uploading)
             IN_PROGRESS -> {
                 when (json.getString(MSG)) {
@@ -91,15 +92,13 @@ class LogsActivity : AppCompatActivity() {
             else -> log.title = "Other"
         }
 
-        if (!status.equals(CLOSE)) {
-            logsEventData.add(log)
-            adapter.addItem(log)
-            adapter.notifyDataSetChanged()
-            binding.timelineRv.scrollToPosition(adapter.itemCount - 1)
-        } else {
-            if (logsEventData.size == 0) {
-                finish()
-            }
+        logsEventData.add(log)
+        adapter.addItem(log)
+        adapter.notifyDataSetChanged()
+        binding.timelineRv.scrollToPosition(adapter.itemCount - 1)
+
+        if (status.equals(CLOSE) && logsEventData.size == 0) {
+            finish()
         }
     }
 
