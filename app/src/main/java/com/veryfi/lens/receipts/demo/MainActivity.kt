@@ -527,7 +527,6 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.autoSubmitDocumentOnCapture = autoSubmitDocumentOnCapture
         veryfiLensSettings.backupDocsToGallery = backupDocsToGallery
         veryfiLensSettings.returnStitchedPDF = returnStitchedPDF
-        veryfiLensSettings.dataExtractionEngine = VeryfiLensSettings.ExtractionEngine.None
         veryfiLensSettings.closeCameraOnSubmit = closeCameraOnSubmit
         veryfiLensSettings.locationServicesIsOn = locationServicesIsOn
         veryfiLensSettings.originalImageMaxSizeInMB = originalImageMaxSizeInMB
