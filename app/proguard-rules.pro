@@ -167,14 +167,6 @@
 -keep class org.opencv.core.Mat { public *; }
 -keepclassmembers class org.opencv.core.Mat { *; }
 
-
-
-
-
-
-
-
-
-
-
-
+-keep class com.amazonaws.auth.AWS4Signer { *; }
+-keep class com.amazonaws.auth.QueryStringSigner { *; }
+-keep class com.amazonaws.auth.NoOpSigner { *; }
