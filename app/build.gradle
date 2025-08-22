@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 36
     defaultConfig {
         applicationId "com.veryfi.lens.receipts.demo"
         minSdkVersion 23
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -57,5 +57,5 @@ dependencies {
     implementation 'com.github.pvarry:android-json-viewer:v1.1'
 
     // Veryfi lens
-    implementation 'com.veryfi.lens:veryfi-lens-receipts-sdk:2.1.0.25'
+    implementation 'com.veryfi.lens:veryfi-lens-receipts-sdk:2.1.0.28'
 }
