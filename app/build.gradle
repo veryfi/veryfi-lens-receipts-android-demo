@@ -53,5 +53,5 @@ dependencies {
     implementation 'com.github.pvarry:android-json-viewer:v1.1'
 
     // Veryfi lens
-    implementation 'com.veryfi.lens:veryfi-lens-receipts-sdk:2.2.0.5'
+    implementation 'com.veryfi.lens:veryfi-lens-receipts-sdk:2.3.0.0'
 }
