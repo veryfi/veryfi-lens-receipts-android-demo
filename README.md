@@ -25,8 +25,9 @@ You can watch our video:
 1. [Veryfi Lens Android Examples](#examples)
 2. [How to add Veryfi Lens to your project](#maven)
 3. [How to run this project](#configuration)
-4. [Other platforms](#other_platforms)
-5. [Get in contact with our team](#contact)
+4. [AI agent integration](#skills)
+5. [Other platforms](#other_platforms)
+6. [Get in contact with our team](#contact)
 
 ## Veryfi Lens Receipts & Invoices Android Example <a name="example"></a>
 This is an example of how to use Veryfi Lens Receipts & Invoices in your app, you can find the developer documentation [here](https://app.veryfi.com/lens/docs/android/).
@@ -58,6 +59,14 @@ const val AUTH_APIKEY = "XXX" // replace XXX with your assigned API Keyx
 const val URL = "XXX" // replace XXX with your assigned Endpoint URL
 ```
 - Run the project
+
+## AI agent integration <a name="skills"></a>
+
+Skills in [`skills/`](skills/) let an AI coding agent integrate Veryfi Lens into a host app. Point the agent at that folder, or name the skill to follow.
+
+- **[`veryfi-lens-integrate`](skills/veryfi-lens-integrate/SKILL.md)** — Detects the project platform and routes the integration. It infers iOS, Android, or a plugin, separates Lens UI file upload from the Headless products, and runs a quick or guided intake (flavor, recipe, conflicts) before handing off. Use this when the platform or product is not yet chosen.
+- **[`veryfi-lens-android-integrate`](skills/veryfi-lens-android-integrate/SKILL.md)** — Global Android integration across document types. Covers the Maven flavor artifact, permissions, credentials, `VeryfiLens.configure`, settings recipes, delegate callbacks, `showCamera`, `showGallery`, `showDocumentBrowser`, no-UI `uploadImages`, and the separate Headless Receipts and Headless Credit Cards SDKs.
+- **[`veryfi-lens-android-receipts-integrate`](skills/veryfi-lens-android-receipts-integrate/SKILL.md)** — Integrates the Receipts SDK (`com.veryfi.lens:veryfi-lens-receipts-sdk`) for `RECEIPT`, `INVOICE`, and `OTHER`: Maven repository, permissions, `VeryfiLens.configure`, settings, delegate callbacks, camera, gallery, document browser, and no-UI `uploadImages`.
 
 ## Other Lens Android Examples <a name="examples"></a>
 You can find some example projects, which are the different versions of Lens that we currently offer:
